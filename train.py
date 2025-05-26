@@ -46,23 +46,24 @@ def extract_hog_features(images):
 
 # ------------------ Main Function ------------------
 def main():
-    print("📥 Loading training data...")
+    print("📥 Loads images from data/train_images/")
+    print("🔍 Reads labels from train_labels.csv")
     X_imgs, y = load_dataset(TRAIN_DIR, TRAIN_LABELS, max_samples=TRAIN_SAMPLES)
 
-    print("🔍 Extracting HOG features...")
+    print("🔍 Extracts HOG features")
     X_hog = extract_hog_features(X_imgs)
 
     print("⚙️ Standardizing features...")
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X_hog)
 
-    print("🤖 Training SVM model...")
+    print("🤖 Trains SVM classifier")
     model = SVC(kernel='rbf', C=10, gamma='scale', class_weight='balanced')
     model.fit(X_scaled, y)
 
     os.makedirs(os.path.dirname(MODEL_PATH), exist_ok=True)
     joblib.dump((model, scaler), MODEL_PATH)
-    print(f"✅ Model has been saved to: {MODEL_PATH}")
+    print(f"✅ Saves model to {MODEL_PATH}")
 
 if __name__ == "__main__":
     main()
