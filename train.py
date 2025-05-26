@@ -46,8 +46,8 @@ def extract_hog_features(images):
 
 # ------------------ Main Function ------------------
 def main():
-    print("📥 Loads images from data/train_images/")
-    print("🔍 Reads labels from train_labels.csv")
+    print(f"📥 Loads images from {TRAIN_DIR}")
+    print(f"🔍 Reads labels from {TRAIN_LABELS}")
     X_imgs, y = load_dataset(TRAIN_DIR, TRAIN_LABELS, max_samples=TRAIN_SAMPLES)
 
     print("🔍 Extracts HOG features")
