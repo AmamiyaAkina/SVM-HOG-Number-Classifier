@@ -1,4 +1,4 @@
-# SMV-HOG-Number-Classifier
+# SVM-HOG-Number-Classifier
 
 🎯 A lightweight handwritten digit recognition system based on **HOG feature extraction** and **SVM classification**, supporting training, testing, and model reuse.
 
