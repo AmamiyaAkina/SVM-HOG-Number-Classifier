@@ -46,7 +46,7 @@ def extract_hog_features(images):
 
 # ------------------ Main Function ------------------
 def main():
-    print("📥 Loading train data...")
+    print("📥 Loading training data...")
     X_imgs, y = load_dataset(TRAIN_DIR, TRAIN_LABELS, max_samples=TRAIN_SAMPLES)
 
     print("🔍 Extracting HOG features...")
