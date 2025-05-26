@@ -49,17 +49,17 @@ def main():
         print("❌ Model file not found, please run train.py first for initial model training")
         return
 
-    print("📦 Loading model...")
+    print(f"📦 Loads model from {MODEL_PATH}")
     model, scaler = joblib.load(MODEL_PATH)
 
-    print("📥 Loading test data...")
+    print(f"📥 Loads images from {TEST_DIR}")
     X_imgs, y_true = load_dataset(TEST_DIR, TEST_LABELS, max_samples=TEST_SAMPLES)
 
-    print("🔍 Extracting HOG features...")
+    print(f"🔍 Extracts HOG features")
     X_hog = extract_hog_features(X_imgs)
     X_scaled = scaler.transform(X_hog)
 
-    print("🔮 Predicting...")
+    print("🔮 Predicting")
     y_pred = model.predict(X_scaled)
 
     print("🎯 Accuracy:", accuracy_score(y_true, y_pred))
