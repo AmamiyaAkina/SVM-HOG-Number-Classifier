@@ -53,6 +53,7 @@ def main():
     model, scaler = joblib.load(MODEL_PATH)
 
     print(f"📥 Loads images from {TEST_DIR}")
+    print(f"🔍 Reads labels from {TEST_LABELS}")
     X_imgs, y_true = load_dataset(TEST_DIR, TEST_LABELS, max_samples=TEST_SAMPLES)
 
     print(f"🔍 Extracts HOG features")
