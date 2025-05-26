@@ -33,8 +33,11 @@ joblib
 ```
 
 🚀 Usage
-✅ Train the Model
 
+✅ Deploy data source
+Extract the `Data.zip` into the project.
+
+✅ Train the Model
 python train.py
 
     Loads images from data/train_images/
