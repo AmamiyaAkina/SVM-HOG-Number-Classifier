@@ -35,9 +35,11 @@ joblib
 🚀 Usage
 
 ✅ Deploy data source
+
 Extract the `Data.zip` into the project.
 
 ✅ Train the Model
+
 python train.py
 
     Loads images from data/train_images/
@@ -47,6 +49,7 @@ python train.py
     Saves model to model/svm_hog_model.pkl
 
 ✅ Evaluate the Model
+
 python predict.py
 
     Loads saved model
